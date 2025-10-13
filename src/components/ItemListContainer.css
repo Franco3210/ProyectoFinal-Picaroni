@@ -1,0 +1,34 @@
+.contObjetos {
+  display: flex;
+  flex-wrap: wrap;          
+  justify-content: center;  
+  gap: 20px;                 
+  padding: 20px;
+  margin-top: 20px;          
+}
+
+/* Cada tarjeta */
+.contObjetos .card {
+  width: 250px;            
+  flex: 0 0 auto;           
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagen*/
+.contObjetos .card img {
+  height: 200px;             
+  object-fit: cover;
+}
+
+/* Cuerpo*/
+.contObjetos .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Botón*/
+.contObjetos .card-body button {
+  margin-top: 10px;
+}
