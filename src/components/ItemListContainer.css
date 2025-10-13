@@ -1,3 +1,4 @@
+
 .contObjetos {
   display: flex;
   flex-wrap: wrap;          
@@ -31,4 +32,5 @@
 /* Botón*/
 .contObjetos .card-body button {
   margin-top: 10px;
+
 }

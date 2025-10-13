@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
@@ -19,4 +20,5 @@ export const CartWidget = () => {
       </button>
     </NavLink>
   );
+
 };

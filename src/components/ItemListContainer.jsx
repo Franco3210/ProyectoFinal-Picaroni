@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
@@ -33,5 +34,6 @@ const ItemListContainer = () => {
 
   return <ItemList products={products} />;
 };
+
 
 export default ItemListContainer;

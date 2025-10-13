@@ -1,3 +1,4 @@
+
 import { getFirestore, collection, getDocs } from "firebase/firestore"; // <-- Importar todo lo que vas a usar
 import { app } from "./config";
 
@@ -12,4 +13,5 @@ querySnapshot.forEach((doc) => {
   items.push({...doc.data(),  id:  doc.id})
 });
     return items
+
 }

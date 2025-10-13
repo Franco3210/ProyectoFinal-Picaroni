@@ -1,3 +1,4 @@
+
 import Item from "./Item";
 
 const ItemList = ({ products }) => {
@@ -9,5 +10,6 @@ const ItemList = ({ products }) => {
     </div>
   );
 };
+
 
 export default ItemList;

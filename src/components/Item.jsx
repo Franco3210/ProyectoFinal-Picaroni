@@ -1,3 +1,4 @@
+
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Counter from "./Counter";
@@ -34,3 +35,4 @@ const Item = ({ prod }) => {
 };
 
 export default Item;
+

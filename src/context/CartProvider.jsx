@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { CartContext } from "./CartContext";
 
@@ -70,5 +71,6 @@ function CartProvider({ children }) {
     </CartContext.Provider>
   );
 }
+
 
 export default CartProvider;
