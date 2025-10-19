@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-import { CartContext } from "../context/CartContext.jsx";
+import { CartContext } from "../Context/CartContext.jsx";
 
 export const CartWidget = () => {
   const { cartCount } = useContext(CartContext);
