@@ -2,10 +2,10 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-import { CartContext } from "./Context/CartContext"; // 👈 importás tu contexto
+import { CartContext } from "../context/CartContext.jsx";
 
 export const CartWidget = () => {
-  const { cartCount } = useContext(CartContext); // 👈 usamos el valor del contexto
+  const { cartCount } = useContext(CartContext);
 
   return (
     <NavLink to="/cart">

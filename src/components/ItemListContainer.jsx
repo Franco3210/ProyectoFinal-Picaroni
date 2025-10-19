@@ -2,7 +2,7 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { CartContext } from "./Context/CartContext";
+import { CartContext } from "../context/CartContext.jsx";
 import { getItems } from "../firebase/db"; 
 
 const ItemListContainer = () => {

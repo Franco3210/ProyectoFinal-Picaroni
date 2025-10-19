@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "./Context/CartContext";
+import { CartContext } from "../context/CartContext.jsx";
 
 function Checkout() {
   const { cart, getTotal, clearCart } = useContext(CartContext);
