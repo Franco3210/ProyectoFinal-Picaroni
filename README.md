@@ -1,27 +1,50 @@
-<<<<<<< HEAD
-# React + Vite
+E-commerce hecho con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción:
+    Página web interactiva para un carrito de compras donde el usuario puede ver un catálogo de productos con su información detallada y debida categoría.  
+    El usuario podrá agregar productos al carrito, quitarlos del mismo, realizar un pedido y obtener su ID de compra.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologías utilizadas:
+    -React + Vite
+    -Firebase
+    -JavaScript
+    -CSS
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-E-Commerce hecho con React.
+Funcionalidades principales:
+    -Listado de productos.
+    -Carrito de compras.
+    -División por categorías.
+    -Generación de ID de compra.
 
-Pagina web para compras, con datos obtenidos desde firebase, esta pagina permite a el usuario navegar por diferentes categorias con diferentes productos,
-ademas de ver la informacion de cada producto el usuario podra simular una compra, agregando mas productos al carrito, viendo el total y puediendo modificar cantidades.
+---
 
-Se utilizaron funcionalidades de:
-React
-Firebase
-CSS
-JavaScript
-Context API
-GitHub
->>>>>>> 5c7a3e5e291897d9b29f1bb1b74ee5fbfb18f017
+Estructura del proyecto:
+
+    src/
+    ├── assets/
+    │ └── react.svg
+    ├── components/
+    │ ├── Cart.jsx
+    │ ├── CartWidget.jsx
+    │ ├── Checkout.jsx
+    │ ├── Counter.jsx
+    │ ├── Item.jsx
+    │ ├── ItemList.jsx
+    │ ├── ItemListContainer.jsx
+    │ ├── ItemListContainer.css
+    │ ├── NavBar.jsx
+    │ └── NavBar.css
+    ├── context/
+    │ ├── CartContext.jsx
+    │ └── CartProvider.jsx
+    ├── firebase/
+    │ ├── config.js
+│ └── db.js
+    ├── App.jsx
+    ├── App.css
+    ├── index.css
+    └── main.jsx

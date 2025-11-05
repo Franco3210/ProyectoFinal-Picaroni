@@ -31,10 +31,10 @@ export const NavBar = () => {
           {open && (
             <ul className="dropdown-content">
               <li><NavLink to="/categoria/ropa">Ropa</NavLink></li>
-              <li><NavLink to="/categoria/maquillaje">Maquillaje</NavLink></li>
+              <li><NavLink to="/categoria/celulares">Celulares</NavLink></li>
               <li><NavLink to="/categoria/hogar">Hogar</NavLink></li>
               <li><NavLink to="/categoria/mascotas">Mascotas</NavLink></li>
-              <li><NavLink to="/categoria/comida">Comida</NavLink></li>
+              <li><NavLink to="/categoria/consolas">Consolas</NavLink></li>
             </ul>
           )}
         </li>
