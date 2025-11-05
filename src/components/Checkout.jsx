@@ -1,49 +1,100 @@
-import { useContext } from "react";
-import { CartContext } from "../Context/CartContext.jsx";
+import { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext.jsx";
+import "./Checkout.css";
 
 function Checkout() {
   const { cart, getTotal, clearCart } = useContext(CartContext);
+  const [showForm, setShowForm] = useState(false);
+  const [buyer, setBuyer] = useState({ nombre: "", email: "", telefono: "" });
+  const [orderId, setOrderId] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  if (cart.length === 0)
+  // Si ya se generó la orden
+  if (orderId) {
     return (
-      <div style={{ padding: "2rem" }}>
+      <div className="checkout-container">
+        <h2>¡Gracias por tu compra, {buyer.nombre}!</h2>
+        <p>Tu ID de orden es:</p>
+        <strong className="order-id">{orderId}</strong>
+      </div>
+    );
+  }
+
+ 
+  if (cart.length === 0) {
+    return (
+      <div className="checkout-container">
         <h2>Tu carrito está vacío</h2>
         <p>Agrega productos antes de continuar al checkout.</p>
       </div>
     );
+  }
 
-  const handleCheckout = () => {
-    alert("Gracias por tu compra!");
-    clearCart(); // opcional: vaciar carrito después del checkout
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+   
+    const fakeId = Math.random().toString(36).substring(2, 10).toUpperCase();
+
+
+    setTimeout(() => {
+      setOrderId(fakeId);
+      clearCart();
+      setLoading(false);
+    }, 1500);
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>💳 Checkout</h2>
-      <ul>
-        {cart.map((p) => (
-          <li key={p.id}>
-            {p.title} x {p.quantity} = ${p.price * p.quantity}
-          </li>
-        ))}
-      </ul>
-      <h3>Total: ${getTotal()}</h3>
-      <button
-        onClick={handleCheckout}
-        style={{
-          padding: "0.7rem 1.5rem",
-          background: "#28a745",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Confirmar Compra
-      </button>
+    <div className="checkout-container">
+      <h2>🛒 Checkout</h2>
+
+      {!showForm ? (
+        <>
+          <ul className="checkout-list">
+            {cart.map((p) => (
+              <li key={p.id}>
+                {p.title} x {p.quantity} = ${p.price * p.quantity}
+              </li>
+            ))}
+          </ul>
+          <h3>Total: ${getTotal()}</h3>
+          <button className="checkout-button" onClick={() => setShowForm(true)}>
+            Ir al formulario de compra
+          </button>
+        </>
+      ) : (
+        <form onSubmit={handleSubmit} className="checkout-form">
+          <h3>Completa tus datos</h3>
+          <input
+            type="text"
+            placeholder="Nombre completo"
+            value={buyer.nombre}
+            onChange={(e) => setBuyer({ ...buyer, nombre: e.target.value })}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            value={buyer.email}
+            onChange={(e) => setBuyer({ ...buyer, email: e.target.value })}
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Teléfono"
+            value={buyer.telefono}
+            onChange={(e) => setBuyer({ ...buyer, telefono: e.target.value })}
+            required
+          />
+          <button type="submit" className="checkout-button" disabled={loading}>
+            {loading ? "Procesando compra..." : "Finalizar compra"}
+          </button>
+        </form>
+      )}
     </div>
   );
 }
-
 
 export default Checkout;

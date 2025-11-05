@@ -45,7 +45,7 @@ function CartProvider({ children }) {
         .map((p) =>
           p.id === id ? { ...p, quantity: p.quantity - 1 } : p
         )
-        .filter((p) => p.quantity > 0) // elimina items con 0
+        .filter((p) => p.quantity > 0) 
     );
   };
 
