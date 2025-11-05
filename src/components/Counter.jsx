@@ -1,6 +1,6 @@
 
 import { useState, useContext } from "react";
-import { CartContext } from "../Context/CartContext.jsx";
+import { CartContext } from "../context/CartContext.jsx";
 
 function Counter({ item }) {
   const [count, setCount] = useState(0);
